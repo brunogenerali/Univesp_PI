@@ -10,6 +10,14 @@ class Aluno(models.Model):
     
 class Menssagem(models.Model):
     aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
+    faltas_aluno = models.IntegerField(default=0)
+    #falta_data = models.DateTimeField(auto_now=True, auto_now_add=False)
     msg_text = models.TextField()
-    msg_data = models.DateTimeField()
+    msg_data = models.DateTimeField(auto_now_add=True)
+    
+class DadosExcel(models.Model):
+    nome = models.CharField(max_length=100)
+    documento = models.CharField(max_length=20)
+    data = models.DateField()
+    faltas = models.IntegerField()    
     
