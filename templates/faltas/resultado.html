@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Resultado</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dados do Último Upload</h1>    
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Documento</th>
+          <th>Data</th>
+          <th>Faltas</th>
+          <th>Responsavel</th>
+          <th>Telefone</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for dado in dados %}
+          <tr>
+            <td>{{ dado.nome }}</td>
+            <td>{{ dado.documento }}</td>
+            <td>{{ dado.data }}</td>
+            <td>{{ dado.faltas }}</td>
+            <td>{{ dado.resp_aluno }}</td>
+            <td>{{ dado.fone_aluno }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="4">Nenhum dado disponível</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
