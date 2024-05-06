@@ -25,3 +25,4 @@ class DadosExcel(models.Model):
     faltas = models.IntegerField()
     resp_aluno = models.CharField(max_length=200, default='')
     fone_aluno = models.CharField(max_length=11, default=0)
+    mensagem_falta = models.TextField(default='')

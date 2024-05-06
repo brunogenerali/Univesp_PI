@@ -1,15 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <title>Resultado</title>
-    <style>
+    <link rel="stylesheet" href="{% static '/styles/style.css' %}">
+    {% comment %} <style>
       table,
       th,
       td {
         border: 1px solid black;
         border-collapse: collapse;
       }
-    </style>
+    </style> {% endcomment %}
   </head>
   <body>
     <h1>Dados do Último Upload</h1>    
@@ -22,6 +24,7 @@
           <th>Faltas</th>
           <th>Responsavel</th>
           <th>Telefone</th>
+          <th>Enviar</th>
         </tr>
       </thead>
       <tbody>
@@ -33,6 +36,9 @@
             <td>{{ dado.faltas }}</td>
             <td>{{ dado.resp_aluno }}</td>
             <td>{{ dado.fone_aluno }}</td>
+            <td>
+              <button onclick="enviarWhatsapp('{{ dado.fone_aluno }}', '{{ dado.mensagem_falta }}')">Enviar Mensagem</button>
+          </td>
           </tr>
           {% empty %}
           <tr>
@@ -41,5 +47,13 @@
         {% endfor %}
       </tbody>
     </table>
+    <a href="#"><h2>VOLTAR HOME</h2></a>
   </body>
 </html>
+
+<script>
+  function enviarWhatsapp(numero, mensagem) {
+      // Substitua 'seu_numero' pelo seu número de WhatsApp com o código do país
+      window.open(`https://api.whatsapp.com/send?phone=55${numero}&text=${mensagem}`, '_blank');
+  }
+</script>

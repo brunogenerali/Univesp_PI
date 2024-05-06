@@ -1,0 +1,28 @@
+.btn{
+    padding: 10px 8px;
+    width: 50px;
+    color: black;
+    background-color: rgb(245, 245, 241);
+    border: 1px solid #555;
+    border-radius: 5px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.btn_1{
+    padding: 10px 8px;
+    width: 50px;
+    color: black;
+    background-color: rgb(245, 245, 241);
+    border: 1px solid #555;
+    border-radius: 5px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }

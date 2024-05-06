@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import DadosExcel, Aluno
 from .forms import UploadForm, AddAlunos
 import pandas as pd
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -19,6 +20,7 @@ def processar_upload(request):
             try:
                 df = pd.read_excel(arquivo, skiprows=13)
                 dia = data.day  # Dia selecionado no formulário
+                data_msg = str(f'{data.day}/{data.month}/{data.year}')
                 # Filtrar os dados para o dia especificado
                 df_filtrado = df[df[dia] > 4]
                 df_novo = df_filtrado[['Aluno', 'RA', dia]]
@@ -27,8 +29,9 @@ def processar_upload(request):
                     responsavel = Aluno.objects.get(
                         ra__exact=row['RA']).responsavel
                     telefone = Aluno.objects.get(ra__exact=row['RA']).telefone
+                    mensagem = str(f'A PEI E. E. Antonio Marinho de Carvalho Filho, informa que o(a) aluno(a), {row['Aluno']}, está faltando hoje , {data_msg}, . No caso da razão da falta gerar atestado, aconselhamos trazer uma cópia para a escola, para justificar a falta do aluno. Obs: Os casos de excesso de faltas não justificadas serão encaminhados para o Conselho Tutelar. Caso o atestado já tenha sido entregue na escola, desconsidere a mensagem.')
                     dados = DadosExcel(
-                        nome=row['Aluno'], documento=row['RA'], data=data, faltas=row[int(dia)], resp_aluno=responsavel, fone_aluno=telefone)
+                        nome=row['Aluno'], documento=row['RA'], data=data, faltas=row[int(dia)], resp_aluno=responsavel, fone_aluno=telefone, mensagem_falta=mensagem)
                     dados.save()  # Salva os dados no banco de dados
                     dados_list.append(dados)
 
@@ -76,3 +79,6 @@ def add_alunos(request):
     else:
         form = AddAlunos()
     return render(request, 'faltas/cadastro.html', {'form': form})
+
+def upload(request):
+    return HttpResponse("PAGINA UPLOAD")
