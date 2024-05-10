@@ -29,7 +29,7 @@ def processar_upload(request):
                     responsavel = Aluno.objects.get(
                         ra__exact=row['RA']).responsavel
                     telefone = Aluno.objects.get(ra__exact=row['RA']).telefone
-                    mensagem = str(f'A PEI E. E. Antonio Marinho de Carvalho Filho, informa que o(a) aluno(a), {row['Aluno']}, está faltando hoje , {data_msg}, . No caso da razão da falta gerar atestado, aconselhamos trazer uma cópia para a escola, para justificar a falta do aluno. Obs: Os casos de excesso de faltas não justificadas serão encaminhados para o Conselho Tutelar. Caso o atestado já tenha sido entregue na escola, desconsidere a mensagem.')
+                    mensagem = str(f'A PEI E. E. Antonio Marinho de Carvalho Filho, informa que o(a) aluno(a), {row["Aluno"]}, está faltando hoje , {data_msg}, . No caso da razão da falta gerar atestado, aconselhamos trazer uma cópia para a escola, para justificar a falta do aluno. Obs: Os casos de excesso de faltas não justificadas serão encaminhados para o Conselho Tutelar. Caso o atestado já tenha sido entregue na escola, desconsidere a mensagem.')
                     dados = DadosExcel(
                         nome=row['Aluno'], documento=row['RA'], data=data, faltas=row[int(dia)], resp_aluno=responsavel, fone_aluno=telefone, mensagem_falta=mensagem)
                     dados.save()  # Salva os dados no banco de dados
@@ -79,6 +79,3 @@ def add_alunos(request):
     else:
         form = AddAlunos()
     return render(request, 'faltas/cadastro.html', {'form': form})
-
-def upload(request):
-    return HttpResponse("PAGINA UPLOAD")
