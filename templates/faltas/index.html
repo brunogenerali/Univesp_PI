@@ -1,15 +1,16 @@
+{% extends 'shared/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    <link rel="stylesheet" href="{% static '/styles/style.css' %}">
-</head>
-<body>
-    <h1>INDEX</h1>
-    <a href="upload/"><h2>UPLOAD</h2></a>
-    <a href="cadastro/">CADASTRO EM MASSA</a>
-</body>
-</html>
+{% block content %}
+  <main class="d-flex flex-column align-items-center">
+    <h1 class="text-align-center">Instruções de uso</h1>
+    <div>
+      <h2>- Cadastro</h2>
+      <p>
+        Antes de realizar o upload do arquivo da SEDUC é necessário cadastrar todos os alunos do arquivo. Para isso, crie um arquivo excel com as colunas: Aluno, RA, Turma, Responsavel e Telefone. Cnforme imagem abaixo:
+        <img src="{% static '/assets/modelo_cadastro.png' %}" alt="Modelo table de cadastro de alunos" />
+      </p>
+      <h2>- Vídeo Tutorial</h2>
+      <iframe width="700" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=z-sqkcLXVcjUT4sN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </main>
+{% endblock %}

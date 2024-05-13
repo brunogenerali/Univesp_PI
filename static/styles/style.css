@@ -1,3 +1,6 @@
+body{
+    background-color: #E0FBE2;
+}
 .btn{
     padding: 10px 8px;
     width: 50px;
@@ -21,3 +24,8 @@
     user-select: none;
     cursor: pointer;
 }
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }

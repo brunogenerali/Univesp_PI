@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>ADD ALUNOS</title>
-</head>
-<body>
-    <h1>ADD ALUNOS</h1>
-    <form method="post" enctype="multipart/form-data">
+{% extends "shared/base.html" %}
+{% load static %}
+{% block content %}
+    <section class="d-flex flex-column align-items-center">
+    <h2>Cadastro em massa de alunos</h2>
+    <form class="row col-2 text-center justify-content-center" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Enviar</button>
+        <button class="col-5 btn btn-success" type="submit">Enviar</button>
     </form>
-    <a href="{% url 'index' %}">
-        <button>
-            VOLTAR
-        </button>
-    </a>
-</body>
-</html>
+    <p class="pt-5"> <strong>
+        Modelo de arquivo:
+    </strong></p>
+        <img src="{% static '/assets/modelo_cadastro.png' %}" alt="Modelo table de cadastro de alunos" />
+      
+    </section>
+{% endblock %}

@@ -1,16 +1,12 @@
+{% extends 'shared/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Upload de Arquivo Excel</title>
-</head>
-<body>
-    <h1>Upload de Arquivo Excel</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Enviar</button>
+{% block content %}
+  <section class="d-flex flex-column align-items-center">
+    <h2>Upload de Arquivo SEDUC formato Excel</h2>
+    <form class="row col-2 text-center justify-content-center" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="col-5 btn btn-success" type="submit">Enviar</button>
     </form>
-    <a href='{% url "index" %}'>Voltar</a>
-</body>
-</html>
+  </section>
+{% endblock %}
