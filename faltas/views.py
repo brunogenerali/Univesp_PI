@@ -71,7 +71,7 @@ def add_alunos(request):
                         telefone=row['Telefone']
                     )
                     aluno.save()
-                return render(request, 'faltas/index.html')
+                return render(request, 'faltas/cadastro_success.html')
             except Exception as e:
                 return render(request, 'faltas/erro.html', {
                     'mensagem': 'Mensagem de Erro ' + str(e)})

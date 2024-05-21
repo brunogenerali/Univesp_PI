@@ -3,15 +3,16 @@
 {% block content %}
   <main class="d-flex flex-column align-items-center">
     <h1 class="text-align-center">Instruções de uso</h1>
-    <div class="row">
+    <div class="">
       <h2>- Cadastro</h2>
       <p class="col-md">Antes de realizar o upload do arquivo da SEDUC é necessário cadastrar todos os alunos do arquivo. Para isso, crie um arquivo excel com as colunas: Aluno, RA, Turma, Responsavel e Telefone. Cnforme imagem abaixo:</p>
       <img class="img" src="{% static '/assets/modelo_cadastro.png' %}" alt="Modelo table de cadastro de alunos" />
       <h2>- Vídeo Tutorial</h2>
-      <div class="row embed-responsive embed-responsive-16by9">
+      <div class="embed-responsive">
         <iframe class="embed-responsive-item" width="700" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=z-sqkcLXVcjUT4sN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
-    <a class="btn btn-danger row m-5 p-2" href="{% url 'clear_tables' %}">APAGAR DADOS</a>
+    <a class="btn btn-danger col-md m-5 p-2" href="{% url 'clear_tables' %}">APAGAR DADOS</a>
+    <a class="btn_1" href="{% url 'clear_tables' %}">APAGAR DADOS</a>
   </main>
 {% endblock %}
