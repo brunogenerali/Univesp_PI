@@ -1,17 +1,16 @@
-{% extends "shared/base.html" %}
+{% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-    <section class="d-flex flex-column align-items-center">
+  <section class="d-flex flex-column align-items-center row">
     <h2>Cadastro em massa de alunos</h2>
     <form class="row col-2 text-center justify-content-center" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="col-5 btn btn-success" type="submit">Enviar</button>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="col-5 btn btn-success" type="submit">Enviar</button>
     </form>
-    <p class="pt-5"> <strong>
-        Modelo de arquivo:
-    </strong></p>
-        <img src="{% static '/assets/modelo_cadastro.png' %}" alt="Modelo table de cadastro de alunos" />
-      
-    </section>
+    <p class="pt-5">
+      <strong>Modelo de arquivo:</strong>
+    </p>
+    <img src="{% static '/assets/modelo_cadastro.png' %}" alt="Modelo table de cadastro de alunos" />
+  </section>
 {% endblock %}

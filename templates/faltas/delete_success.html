@@ -1,0 +1,10 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+<div class="alert alert-success mt-5 row" role="alert">
+    <h4 class="alert-heading">Dados Apagados com Sucesso!</h4>
+    <p>Todos os dados foram apagados com sucesso.</p>
+    <hr>
+    <p class="mb-0 row col col-2"><a href="{% url 'index' %}" class="btn btn-primary">Voltar</a></p>
+</div>
+{% endblock %}

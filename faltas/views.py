@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import DadosExcel, Aluno
 from .forms import UploadForm, AddAlunos
 import pandas as pd
-from django.http import HttpResponse
+from django.db import connection
 
 # Create your views here.
 
@@ -79,3 +79,14 @@ def add_alunos(request):
     else:
         form = AddAlunos()
     return render(request, 'faltas/cadastro.html', {'form': form})
+
+def confirm_clear_tables(request):
+    return render(request, 'faltas/confirm_clear_tables.html')
+
+def clear_tables(request):
+    if request.method == "POST":
+        with connection.cursor() as cursor:
+            cursor.execute("DELETE FROM faltas_aluno")
+            cursor.execute("DELETE FROM faltas_dadosexcel")
+        return render(request, 'faltas/delete_success.html')
+    return redirect('confirm_clear_tables')

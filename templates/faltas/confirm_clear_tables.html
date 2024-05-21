@@ -1,0 +1,12 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+  <div>
+    <h1>Tem certeza de que deseja limpar TODOS os dados?</h1>
+    <form method="post" action="{% url 'clear_tables' %}">
+      {% csrf_token %}
+      <button class="btn btn-danger col col-1 mb-2" type="submit">Sim</button>
+    </form>
+    <a class="btn btn-primary col col-1" href="{% url 'cadastro' %}">Não</a>
+  </div>
+{% endblock %}

@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
   <h1>Resultado da pesquisa</h1>
-  <table class="table table-striped table-bordered table-sm">
+  <table class="table table-striped table-bordered table-sm table-responsive">
     <thead>
       <tr>
         <th scope="col">Nome</th>
@@ -24,7 +24,7 @@
           <td>{{ dado.resp_aluno }}</td>
           <td>{{ dado.fone_aluno }}</td>
           <td>
-            <button class="btn-outline-success text-nowrap" onclick="enviarWhatsapp('{{ dado.fone_aluno }}', '{{ dado.mensagem_falta }}')">Enviar Mensagem</button>
+            <button class="btn-outline-success btn-block text-nowrap" onclick="enviarWhatsapp('{{ dado.fone_aluno }}', '{{ dado.mensagem_falta }}')">Enviar Mensagem</button>            
           </td>
         </tr>
         {% empty %}
@@ -35,9 +35,4 @@
     </tbody>
   </table>
 {% endblock %}
-<script>
-  function enviarWhatsapp(numero, mensagem) {
-    // Substitua 'seu_numero' pelo seu número de WhatsApp com o código do país
-    window.open(`https://api.whatsapp.com/send?phone=55${numero}&text=${mensagem}`, '_blank')
-  }
-</script>
+
