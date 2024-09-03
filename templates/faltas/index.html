@@ -1,18 +1,54 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-  <main class="d-flex flex-column align-items-center">
-    <h1 class="text-align-center">Instruções de uso</h1>
-    <div class="">
-      <h2>- Cadastro</h2>
-      <p class="col-md">Antes de realizar o upload do arquivo da SEDUC é necessário cadastrar todos os alunos do arquivo. Para isso, crie um arquivo excel com as colunas: Aluno, RA, Turma, Responsavel e Telefone. Cnforme imagem abaixo:</p>
-      <img class="img" src="{% static '/assets/modelo_cadastro.png' %}" alt="Modelo table de cadastro de alunos" />
-      <h2>- Vídeo Tutorial</h2>
-      <div class="embed-responsive">
-        <iframe class="embed-responsive-item" width="700" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=z-sqkcLXVcjUT4sN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <main class="container">
+    <section id="cadastro" class="section">
+      <h1 class="section__title">Instruções de Uso</h1>
+      <p class="section__description">Antes de realizar o upload do arquivo da SEDUC, é necessário cadastrar todos os alunos do arquivo. Para isso, crie um arquivo Excel com as colunas: Aluno, RA, Turma, Responsável e Telefone, conforme a imagem abaixo:</p>
+      {% comment %} <img src="{% static '/assets/modelo_cadastro.png' %}" alt="Modelo tabela de cadastro de alunos" /> {% endcomment %}
+      <div class="table-container">
+        <table class="table">
+          <thead class="table__head">
+            <tr class="table__row">
+              <th class="table__header">Aluno</th>
+              <th class="table__header">RA</th>
+              <th class="table__header">Turma</th>
+              <th class="table__header">Responsável</th>
+              <th class="table__header">Telefone</th>
+            </tr>
+          </thead>
+          <tbody class="table__body">
+            <tr class="table__row">
+              <td class="table__cell">FULANO DA SILVA</td>
+              <td class="table__cell">002145247854-X/SP</td>
+              <td class="table__cell">1</td>
+              <td class="table__cell">Responsável de FULANO DA SILVA</td>
+              <td class="table__cell">18991234578</td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__cell">CICLANO DOS SANTOS</td>
+              <td class="table__cell">546842156445-6/SP</td>
+              <td class="table__cell">1</td>
+              <td class="table__cell">Responsável de CICLANO DOS SANTOS</td>
+              <td class="table__cell">18991234578</td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__cell">BELTRANO DE OLIVEIRA</td>
+              <td class="table__cell">6545454654546-2/SP</td>
+              <td class="table__cell">1</td>
+              <td class="table__cell">Responsável de BELTRANO DE OLIVEIRA</td>
+              <td class="table__cell">18991234578</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
-    <a class="btn btn-danger col-md m-5 p-2" href="{% url 'clear_tables' %}">APAGAR DADOS</a>
-    <a class="btn_1" href="{% url 'clear_tables' %}">APAGAR DADOS</a>
+    </section>
+
+    <section id="tutorial" class="section">
+      <h2 class="section__title">Vídeo Tutorial</h2>
+      <div class="video-container">
+        <iframe class="video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=z-sqkcLXVcjUT4sN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </section>
   </main>
 {% endblock %}

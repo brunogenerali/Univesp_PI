@@ -1,12 +1,14 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-  <section class="d-flex flex-column align-items-center row">
-    <h2>Upload de Arquivo SEDUC formato Excel</h2>
-    <form class="row col-2 text-center justify-content-center" method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button class="col-5 btn btn-success" type="submit">Enviar</button>
-    </form>
-  </section>
+  <main class="container">
+    <section class="section d-flex flex-column align-items-center">
+      <h2 class="section__title">Upload de Arquivo SEDUC formato Excel</h2>
+      <form class="form row col-md-6 col-lg-4 text-center justify-content-center" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-success col-12" type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
 {% endblock %}

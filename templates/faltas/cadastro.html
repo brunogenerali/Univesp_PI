@@ -1,16 +1,53 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-  <section class="d-flex flex-column align-items-center row">
-    <h2>Cadastro em massa de alunos</h2>
-    <form class="row col-2 text-center justify-content-center" method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button class="col-5 btn btn-success" type="submit">Enviar</button>
-    </form>
-    <p class="pt-5">
-      <strong>Modelo de arquivo:</strong>
-    </p>
-    <img src="{% static '/assets/modelo_cadastro.png' %}" alt="Modelo table de cadastro de alunos" />
-  </section>
+  <main class="container">
+    <section class="section">
+      <h2 class="section__title">Cadastro em massa de alunos</h2>
+      <form class="form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-success" type="submit">Enviar</button>
+      </form>
+      <p class="section__description pt-5">
+        <strong>Modelo de arquivo:</strong>
+      </p>
+      <div class="table-container">
+        <table class="table">
+          <thead class="table__head">
+            <tr class="table__row">
+              <th class="table__header">Aluno</th>
+              <th class="table__header">RA</th>
+              <th class="table__header">Turma</th>
+              <th class="table__header">Responsável</th>
+              <th class="table__header">Telefone</th>
+            </tr>
+          </thead>
+          <tbody class="table__body">
+            <tr class="table__row">
+              <td class="table__cell">FULANO DA SILVA</td>
+              <td class="table__cell">002145247854-X/SP</td>
+              <td class="table__cell">1</td>
+              <td class="table__cell">Responsável de FULANO DA SILVA</td>
+              <td class="table__cell">18991234578</td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__cell">CICLANO DOS SANTOS</td>
+              <td class="table__cell">546842156445-6/SP</td>
+              <td class="table__cell">1</td>
+              <td class="table__cell">Responsável de CICLANO DOS SANTOS</td>
+              <td class="table__cell">18991234578</td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__cell">BELTRANO DE OLIVEIRA</td>
+              <td class="table__cell">6545454654546-2/SP</td>
+              <td class="table__cell">1</td>
+              <td class="table__cell">Responsável de BELTRANO DE OLIVEIRA</td>
+              <td class="table__cell">18991234578</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 {% endblock %}
