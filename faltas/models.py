@@ -13,16 +13,17 @@ class Aluno(models.Model):
 class Menssagem(models.Model):
     aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
     faltas_aluno = models.IntegerField(default=0)
-    # falta_data = models.DateTimeField(auto_now=True, auto_now_add=False)
+    falta_data = models.DateField()
     msg_text = models.TextField()
     msg_data = models.DateTimeField(auto_now_add=True)
+    msg_enviada = models.BooleanField(default=False)
 
 
-class DadosExcel(models.Model):
-    nome = models.CharField(max_length=100)
-    documento = models.CharField(max_length=20)
-    data = models.DateField()
-    faltas = models.IntegerField()
-    resp_aluno = models.CharField(max_length=200, default='')
-    fone_aluno = models.CharField(max_length=11, default=0)
-    mensagem_falta = models.TextField(default='')
+# class DadosExcel(models.Model):
+#     nome = models.CharField(max_length=100)
+#     documento = models.CharField(max_length=20)
+#     data = models.DateField()
+#     faltas = models.IntegerField()
+#     resp_aluno = models.CharField(max_length=200, default='')
+#     fone_aluno = models.CharField(max_length=11, default=0)
+#     mensagem_falta = models.TextField(default='')

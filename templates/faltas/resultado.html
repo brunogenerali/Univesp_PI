@@ -19,20 +19,20 @@
         <tbody class="table__body">
           {% for dado in dados %}
             <tr class="table__row">
-              <td class="table__cell">{{ dado.nome }}</td>
-              <td class="table__cell">{{ dado.documento }}</td>
-              <td class="table__cell">{{ dado.data }}</td>
-              <td class="table__cell">{{ dado.faltas }}</td>
-              <td class="table__cell">{{ dado.resp_aluno }}</td>
-              <td class="table__cell">{{ dado.fone_aluno }}</td>
+              <td class="table__cell">{{ dado.aluno.nome }}</td>
+              <td class="table__cell">{{ dado.aluno.ra }}</td>
+              <td class="table__cell">{{ dado.falta_data }}</td>
+              <td class="table__cell">{{ dado.faltas_aluno }}</td>
+              <td class="table__cell">{{ dado.aluno.responsavel }}</td>
+              <td class="table__cell">{{ dado.aluno.telefone }}</td>
               <td class="table__cell">
-                <button class="btn-outline-success btn-block text-nowrap" onclick="enviarWhatsapp('{{ dado.fone_aluno }}', '{{ dado.mensagem_falta }}')">Enviar Mensagem</button>
+                <button class="btn-outline-success btn-block text-nowrap" onclick="enviarMensagem('{{ dado.id }}', '{{ dado.aluno.telefone }}', '{{ dado.msg_text }}')">Enviar Mensagem</button>
               </td>
             </tr>
           {% empty %}
-          <tr class="table__row">
-            <td class="table__cell" colspan="7">Nenhum dado disponível</td>
-          </tr>
+            <tr class="table__row">
+              <td class="table__cell" colspan="7">Nenhum dado disponível</td>
+            </tr>
           {% endfor %}
         </tbody>
       </table>

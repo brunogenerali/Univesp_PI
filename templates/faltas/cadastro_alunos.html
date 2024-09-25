@@ -1,0 +1,46 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+  <div class="container mt-4">
+    <h2 class="text-center">Cadastro de Alunos Faltantes</h2>
+    <p>Os seguintes alunos não estão cadastrados no banco de dados. Por favor, preencha os dados para cadastrar:</p>
+
+    <form method="POST" action="{% url 'cadastrar_alunos' %}">
+      {% csrf_token %}
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Nome do Aluno</th>
+            <th>RA</th>
+            <th>Turma</th>
+            <th>Responsável</th>
+            <th>Telefone</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for aluno in alunos_faltantes %}
+            <tr>
+              <td>
+                <input type="text" name="nome_{{ forloop.counter }}" value="{{ aluno.nome }}" class="form-control" readonly />
+              </td>
+              <td>
+                <input type="text" name="ra_{{ forloop.counter }}" value="{{ aluno.ra }}" class="form-control" readonly />
+              </td>
+              <td>
+                <input type="text" name="turma_{{ forloop.counter }}" class="form-control" placeholder="Turma do Aluno" />
+              </td>
+              <td>
+                <input type="text" name="responsavel_{{ forloop.counter }}" class="form-control" placeholder="Nome do Responsável" />
+              </td>
+              <td>
+                <input type="text" name="telefone_{{ forloop.counter }}" class="form-control" placeholder="Telefone do Responsável" />
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <button type="submit" class="btn btn-primary">Cadastrar Alunos</button>
+    </form>
+  </div>
+{% endblock %}
