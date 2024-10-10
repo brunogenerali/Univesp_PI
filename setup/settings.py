@@ -26,7 +26,16 @@ SECRET_KEY = 'django-insecure-ixqmd328u2y*zv@(eyzj*noew$f30pggyv8hef^y0ry5!v^6j3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['generalibruno.pythonanywhere.com','127.0.0.1']
+#Config Produção
+#ALLOWED_HOSTS = ['generalibruno.pythonanywhere.com','127.0.0.1']
+
+# Configurações Desenvolvimento
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:9000']
+CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_SAMESITE = None
+
 
 
 # Application definition
@@ -86,7 +95,7 @@ DATABASES = {
         'NAME': 'univesp',  # Nome do seu banco de dados
         'USER': 'root',    # Seu usuário do MySQL
         'PASSWORD': 'rootpassword',   # Sua senha do MySQL
-        'HOST': 'localhost',       # ou o IP do servidor MySQL
+        'HOST': 'db',       # ou o IP do servidor MySQL
         'PORT': '3306',            # A porta padrão do MySQL
     }
 }

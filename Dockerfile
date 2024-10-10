@@ -25,6 +25,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Coletando os arquivos estáticos
 RUN python manage.py collectstatic --noinput
+RUN python manage.py migrate
 
 # Expondo a porta 9000 para acesso externo
 EXPOSE 9000
