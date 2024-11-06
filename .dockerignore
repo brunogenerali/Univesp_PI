@@ -1,0 +1,38 @@
+# Ignora diretórios de dependências
+venv/
+env/
+__pycache__/
+.venv/
+.env/
+
+# Ignora arquivos de configuração do sistema
+.DS_Store
+*.log
+*.pot
+*.pyc
+
+# Ignora diretórios de build e distribuição
+build/
+dist/
+*.egg-info/
+
+# Ignora arquivos de configuração do editor de código
+.vscode/
+.idea/
+
+# Ignora arquivos temporários
+*.bak
+*.swp
+*~
+
+# Ignora arquivos de banco de dados (ex.: SQLite) e arquivos de mídia
+db.sqlite3
+*.sqlite3
+media/
+db_data/
+
+# Ignora o arquivo de cache do pip
+pip-log.txt
+
+# Ignora o diretório de arquivos de mídia, geralmente configurado com o Django
+/static/

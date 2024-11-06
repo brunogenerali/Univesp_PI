@@ -1,12 +1,12 @@
 # Usando a imagem base python:3.4
-FROM python:3.12
+FROM python
 
 # Definindo variáveis de ambiente para o Django
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 # Atualizando os repositórios antes de instalar os pacotes
-#RUN apt-get update && apt-get upgrade -y
+RUN apt-get update && apt-get upgrade -y
 
 # Instalando dependências do sistema
 RUN apt-get install -y \
@@ -25,6 +25,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Coletando os arquivos estáticos
 RUN python manage.py collectstatic --noinput
+RUN python manage.py makemigrations
 RUN python manage.py migrate
 
 # Expondo a porta 9000 para acesso externo
