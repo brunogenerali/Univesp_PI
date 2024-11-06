@@ -92,7 +92,7 @@ DATABASES = {
     
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # Use 'mysql' para MySQL
-        'NAME': 'univesp',  # Nome do seu banco de dados
+        'NAME': 'generalibruno$univesp',  # Nome do seu banco de dados
         'USER': 'generalibruno',    # Seu usuário do MySQL
         'PASSWORD': 'jHt$Vpc4Hpp@MDx',   # Sua senha do MySQL
         'HOST': 'generalibruno.mysql.pythonanywhere-services.com',       # ou o IP do servidor MySQL
