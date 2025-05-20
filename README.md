@@ -22,10 +22,10 @@ Este projeto tem como objetivo...
 
 ## Autores
 
-ANDRE LINO BEZERRA JUNIOR
-BRUNO GENERALI FERREIRA
-DANIEL FERREIRA MARINI
-ESTER ALVES PEREIR
-JEAN CARLOS LUZ
-RAFAEL OKIYAMA
-RAFAELA APARECIDA DE SOUZA
+Andre Lino Bezerra Junior  
+Bruno Generali Ferreira  
+Daniel Ferreira Marini  
+Ester Alves Pereir  
+Jean Carlos Luz  
+Rafael Okiyama  
+Rafaela Aparecida De Souza  
