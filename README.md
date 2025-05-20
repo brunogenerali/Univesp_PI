@@ -1,4 +1,4 @@
-# Projeto Integrador Univesp Polo computação 2024/1
+# Projeto Integrador Univesp Polo computação 2025
 
 ## Sobre  
 
@@ -22,7 +22,10 @@ Este projeto tem como objetivo...
 
 ## Autores
 
-Bruno Generali Ferreira
-Ester Alves Pereira Okiyama
-Jean Carlos Luz
-Leandro Vieira Galante
+ANDRE LINO BEZERRA JUNIOR
+BRUNO GENERALI FERREIRA
+DANIEL FERREIRA MARINI
+ESTER ALVES PEREIR
+JEAN CARLOS LUZ
+RAFAEL OKIYAMA
+RAFAELA APARECIDA DE SOUZA
