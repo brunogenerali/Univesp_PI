@@ -93,23 +93,24 @@ DATABASES = {
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
     # WEB Connection
-    "default": {
-        "ENGINE": "django.db.backends.mysql",  # Use 'mysql' para MySQL
-        "NAME": "generalibruno$univesp",  # Nome do seu banco de dados
-        "USER": "generalibruno",  # Seu usuário do MySQL
-        "PASSWORD": os.getenv("DB_PASSWORD"),  # Carrega a senha do .env
-        "HOST": "generalibruno.mysql.pythonanywhere-services.com",  # ou o IP do servidor MySQL
-        "PORT": "3306",  # A porta padrão do MySQL
-    }
-    #     # LOCAL CONNECTION
-    #         'default': {
-    #         'ENGINE': 'django.db.backends.mysql',  # Use 'mysql' para MySQL
-    #         'NAME': 'univesp',  # Nome do seu banco de dados
-    #         'USER': 'user',    # Seu usuário do MySQL
-    #         'PASSWORD': os.getenv('DB_PASSWORD'),  # Carrega a senha do .env
-    #         'HOST': 'localhost',       # ou o IP do servidor MySQL
-    #         'PORT': '3306',            # A porta padrão do MySQL
-    #     }
+    # "default": {
+    #     "ENGINE": "django.db.backends.mysql",  # Use 'mysql' para MySQL
+    #     "NAME": "generalibruno$univesp",  # Nome do seu banco de dados
+    #     "USER": "generalibruno",  # Seu usuário do MySQL
+    #     "PASSWORD": os.getenv("DB_PASSWORD"),  # Carrega a senha do .env
+    #     "HOST": "generalibruno.mysql.pythonanywhere-services.com",  # ou o IP do servidor MySQL
+    #     "PORT": "3306",  # A porta padrão do MySQL
+    # }
+        # LOCAL CONNECTION
+            'default': {
+            'ENGINE': 'django.db.backends.mysql',  # Use 'mysql' para MySQL
+            'NAME': 'univesp',  # Nome do seu banco de dados
+            'USER': 'user',    # Seu usuário do MySQL
+            'PASSWORD': 'userpassword',
+            #'PASSWORD': os.getenv('DB_PASSWORD'),  # Carrega a senha do .env
+            'HOST': 'localhost',       # ou o IP do servidor MySQL
+            'PORT': '3306',            # A porta padrão do MySQL
+        }
 }
 
 
