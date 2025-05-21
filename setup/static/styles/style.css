@@ -1,7 +1,6 @@
 /* Variáveis de cores e fontes */
 :root {
-    /* --primary-color: #2c3e50; /* Cor primária usada no layout */
-    --primary-color: #ff0404; /* Cor primária usada no layout */
+    --primary-color: #2c3e50; /* Cor primária usada no layout */    
     --secondary-color: #3498db; /* Cor secundária usada em elementos */
     --background-color: #ecf0f1; /* Cor de fundo geral */
     --text-color: #34495e; /* Cor do texto */
