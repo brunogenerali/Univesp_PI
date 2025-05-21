@@ -95,7 +95,7 @@ DATABASES = {
     # WEB Connection
     "default": {
         "ENGINE": "django.db.backends.mysql",  # Use 'mysql' para MySQL
-        "NAME": "generalibruno$univesp",  # Nome do seu banco de dados
+        "NAME": "generalibruno$projeto",  # Nome do seu banco de dados
         "USER": "generalibruno",  # Seu usuário do MySQL
         #"PASSWORD": os.getenv("DB_PASSWORD"),  # Carrega a senha do .env
         "PASSWORD": "#Univesp2025",
