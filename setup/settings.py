@@ -97,7 +97,8 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",  # Use 'mysql' para MySQL
         "NAME": "generalibruno$univesp",  # Nome do seu banco de dados
         "USER": "generalibruno",  # Seu usuário do MySQL
-        "PASSWORD": os.getenv("DB_PASSWORD"),  # Carrega a senha do .env
+        #"PASSWORD": os.getenv("DB_PASSWORD"),  # Carrega a senha do .env
+        "PASSWORD": "#Univesp2025",
         "HOST": "generalibruno.mysql.pythonanywhere-services.com",  # ou o IP do servidor MySQL
         "PORT": "3306",  # A porta padrão do MySQL
     }
